@@ -2,7 +2,7 @@ body    {
     margin:0px;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
     background: radial-gradient(circle at center, red, blue, rgb(14, 139, 0), rgb(255, 174, 0));
     background-size: 400% 400%;
     animation: gradientefondo 8s ease 0s infinite alternate forwards;
@@ -23,7 +23,7 @@ body    {
 .container  {
     position: relative;
     display: flex;
-    height: 100vh;
+    flex-flow: column;
     width: 100%;
 }
 
@@ -36,18 +36,18 @@ body    {
     background-position: center;
     background-size: cover;
     opacity: 70%;
+    height: 100vh;
+    z-index: -1;
 }
 
 .element1   {
-    padding: 50px 200px 50px 50px;
-    z-index: 1;
     animation: 
-        bouncelogo 2s ease 0s infinite alternate forwards
+        bounce-logo 2s ease 0s infinite alternate forwards
         ;
 }
 
-@keyframes bouncelogo {
-    from{transform: translateY(20px) scale(0.9);}
+@keyframes bounce-logo {
+    from{transform: translateY(20px) scale(0.98);}
     to{transform: translateY(50px) scale(1.02);}
 }
 
@@ -56,7 +56,14 @@ body    {
 }
 
 .element3   {
-    
+    padding: 100px;
+    animation: 
+        move-footer 5s ease 2s 1 alternate forwards;
+    }
+
+@keyframes move-footer {
+    from{transform: translateX(100vw);}
+    to{transform: translateX(0vw);}
 }
 
 
