@@ -23,8 +23,8 @@ body    {
 .container  {
     position: relative;
     display: flex;
-    flex-flow: column;
-    width: 100%;
+    flex-flow: column wrap;
+    gap: 0px;
 }
 
 .container::before  {
@@ -41,22 +41,37 @@ body    {
 }
 
 .element1   {
+    padding: 0px;
+    margin: 0px;
     animation: 
-        bounce-logo 2s ease 0s infinite alternate forwards
+        logo 3s ease 0s 4 alternate forwards
         ;
 }
 
-@keyframes bounce-logo {
+@keyframes logo {
+    from{transform: translateY(0vh);}
+    to{transform: matrix3d(1, 0, 1, 0, 0, 1, 0.5, 0, 0, 0, 1, 0, 50, 50, 0, 1);}
+}
+
+.element2   {
+    padding-bottom: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: 24px;
+    color: rgb(254, 203, 0);
+    text-shadow: 2px 2px 2px black;
+    animation: 
+        bounce 2s ease 0s infinite alternate forwards
+        ;
+}
+
+@keyframes bounce {
     from{transform: translateY(20px) scale(0.98);}
     to{transform: translateY(50px) scale(1.02);}
 }
 
-.element2   {
-
-}
-
 .element3   {
-    padding: 100px;
+    padding: 50px;
     animation: 
         move-footer 5s ease 2s 1 alternate forwards;
     }
